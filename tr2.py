@@ -24,6 +24,10 @@ async def on_message(message):
     # 봇이 메시지를 보낸 경우 무시
     if message.author == client.user:
         return
+
+    # 슬래시 마크가 포함된 메시지인 경우 무시
+    if "/" in message.content:
+        return
     
     # 이모지, 인스타그램 링크, gif 링크를 포함한 메시지인 경우 무시
     if message.content.startswith(('http://', 'https://')) or message.content.startswith(('<:', '<a:', '<@')):
