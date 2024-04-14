@@ -34,7 +34,7 @@ async def on_message(message):
     
     # 메시지 번역
     translations = {}
-    languages = {'KO': '한국어', 'ES': '스페인어', 'EN-US': '영어'}
+    languages = {'KO': 'KR', 'ES': 'ES', 'EN-US': 'EN'}
     for lang, lang_name in languages.items():
         translated_message = deepl_translator.translate_text(
             message.content, target_lang=lang
@@ -42,7 +42,7 @@ async def on_message(message):
         translations[lang_name] = translated_message
     
     # 임베드 생성
-    embed = discord.Embed(title="The translation bot has come to translate the message!", description="", color=0x00ff00)
+    embed = discord.Embed(title="The translation bot has come to translate the message!", description="", color=0x87CEEB)
     for lang_name, translated_message in translations.items():
         embed.add_field(name=lang_name, value=translated_message, inline=False)
     
