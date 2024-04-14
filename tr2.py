@@ -46,7 +46,7 @@ async def on_message(message):
         translations[lang_name] = translated_message
     
     # 임베드 생성
-    embed = discord.Embed(title="The translation bot has come to translate the message!", description="", color=0x87CEEB)
+    embed = discord.Embed(title="The translation bot has come to translate the message!", description="", color=0x48D1CC)
     for lang_name, translated_message in translations.items():
         embed.add_field(name=lang_name, value=translated_message, inline=False)
     
