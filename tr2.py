@@ -15,7 +15,7 @@ client = discord.Client(intents=intents)
 # 봇이 작동하기 시작할 때 실행되는 이벤트
 @client.event
 async def on_ready():
-    await client.change_presence(activity=discord.Game(name="번역 봇입니다"))
+    await client.change_presence(activity=discord.Game(name="번역 준비"))
     print(f'{client.user}로 로그인했습니다.')
 
 # 메시지가 전송될 때마다 실행되는 이벤트
@@ -42,7 +42,7 @@ async def on_message(message):
         translations[lang_name] = translated_message
     
     # 임베드 생성
-    embed = discord.Embed(title="번역 결과", description="", color=0x00ff00)
+    embed = discord.Embed(title="The translation bot has come to translate the message!", description="", color=0x00ff00)
     for lang_name, translated_message in translations.items():
         embed.add_field(name=lang_name, value=translated_message, inline=False)
     
