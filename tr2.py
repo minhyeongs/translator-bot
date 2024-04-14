@@ -1,4 +1,5 @@
 import discord
+import os
 from deepl import Translator as DeeplTranslator
 
 # Deepl API 키
@@ -49,4 +50,5 @@ async def on_message(message):
     await message.channel.send(embed=embed)
 
 # 봇을 실행
-client.run('MTIxNzMxNjkzNjY2OTU5NzczNg.GOlHir.H6iWtoNz3aro_PoZxCeBcgHTgXT6oNHmYnWAPs')
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
