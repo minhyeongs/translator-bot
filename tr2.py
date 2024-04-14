@@ -15,7 +15,7 @@ client = discord.Client(intents=intents)
 # 봇이 작동하기 시작할 때 실행되는 이벤트
 @client.event
 async def on_ready():
-    await client.change_presence(activity=discord.Game(name="번역 준비"))
+    await client.change_presence(activity=discord.Game(name="번역할 준비"))
     print(f'{client.user}로 로그인했습니다.')
 
 # 메시지가 전송될 때마다 실행되는 이벤트
