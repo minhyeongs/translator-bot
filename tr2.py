@@ -45,13 +45,9 @@ async def on_message(message):
         ).text
         translations[lang_name] = translated_message
     
-    # 임베드 생성
-    embed = discord.Embed(title="The translation bot has come to translate the message!", description="", color=0x48D1CC)
-    for lang_name, translated_message in translations.items():
-        embed.add_field(name=lang_name, value=translated_message, inline=False)
-    
-    # 임베드를 디스코드에 보냄
-    await message.channel.send(embed=embed)
+    # 결과 출력
+    translated_result = '\n'.join([f"{lang_name}: {translated_message}" for lang_name, translated_message in translations.items()])
+    await message.channel.send(translated_result)
 
 # 봇을 실행
 access_token = os.environ["BOT_TOKEN"]
